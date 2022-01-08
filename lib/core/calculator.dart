@@ -28,7 +28,8 @@ class Calculator {
       var offsetY = offset.y!;
       if (offsetY.isNegative) {
         var referencePoint = Point(minX, minY, commonZ!);
-        return referencePoint + (offset + OneDimensionOffset(y: -(blocksY - 1)));
+        return referencePoint +
+            (offset + OneDimensionOffset(y: -(blocksY - 1)));
       } else {
         var referencePoint = Point(minX, maxY, commonZ!);
         return referencePoint + offset;
@@ -37,23 +38,52 @@ class Calculator {
 
     if (offset.x != null) {
       var offsetX = offset.x!;
-      if (offsetX.isNegative) {
-        var referencePoint = Point(minX, minY, commonZ!);
-        return referencePoint + (offset + OneDimensionOffset(x: -(blocksX - 1)));
-      } else {
-        var referencePoint = Point(maxX, minY, commonZ!);
-        return referencePoint + offset;
+
+      if (commonZ != null) {
+        if (offsetX.isNegative) {
+          var referencePoint = Point(minX, minY, commonZ);
+          return referencePoint +
+              (offset + OneDimensionOffset(x: -(blocksX - 1)));
+        } else {
+          var referencePoint = Point(maxX, minY, commonZ);
+          return referencePoint + offset;
+        }
+      }
+      if (commonY != null) {
+        if (offsetX.isNegative) {
+          var referencePoint = Point(minX, commonY, minZ);
+          return referencePoint +
+              (offset + OneDimensionOffset(x: -(blocksX - 1)));
+        } else {
+          var referencePoint = Point(maxX, commonY, minZ);
+          return referencePoint + offset;
+        }
       }
     }
 
     if (offset.z != null) {
       var offsetZ = offset.z!;
-      if (offsetZ.isNegative) {
-        var referencePoint = Point(commonX!, minY, minZ);
-        return referencePoint + (offset + OneDimensionOffset(z: -(blocksZ - 1)));
-      } else {
-        var referencePoint = Point(commonX!, minY, maxZ);
-        return referencePoint + offset;
+
+      if (commonX != null) {
+        if (offsetZ.isNegative) {
+          var referencePoint = Point(commonX, minY, minZ);
+          return referencePoint +
+              (offset + OneDimensionOffset(z: -(blocksZ - 1)));
+        } else {
+          var referencePoint = Point(commonX, minY, maxZ);
+          return referencePoint + offset;
+        }
+      }
+
+      if (commonY != null) {
+        if (offsetZ.isNegative) {
+          var referencePoint = Point(minX, commonY, minZ);
+          return referencePoint +
+              (offset + OneDimensionOffset(z: -(blocksZ - 1)));
+        } else {
+          var referencePoint = Point(minX, commonY, maxZ);
+          return referencePoint + offset;
+        }
       }
     }
 

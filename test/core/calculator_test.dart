@@ -138,4 +138,56 @@ void main() {
 
     expect(calculatedTarget, equals(Point(4, -60, 2)));
   });
+
+  test('Should clone area flat to one left', () {
+    var start = Point(-33, -51, 52);
+    var end = Point(-35, -51, 50);
+
+    var calculatedTarget = Calculator.getTarget(
+      start: start,
+      end: end,
+      offset: OneDimensionOffset(z: -1),
+    );
+
+    expect(calculatedTarget, equals(Point(-35, -51, 47)));
+  });
+
+  test('Should clone area flat to one right', () {
+    var start = Point(-33, -51, 52);
+    var end = Point(-35, -51, 50);
+
+    var calculatedTarget = Calculator.getTarget(
+      start: start,
+      end: end,
+      offset: OneDimensionOffset(z: 1),
+    );
+
+    expect(calculatedTarget, equals(Point(-35, -51, 53)));
+  });
+
+  test('Should clone area flat to one top', () {
+    var start = Point(-33, -51, 52);
+    var end = Point(-35, -51, 50);
+
+    var calculatedTarget = Calculator.getTarget(
+      start: start,
+      end: end,
+      offset: OneDimensionOffset(z: 1),
+    );
+
+    expect(calculatedTarget, equals(Point(-38,-51,50)));
+  });
+
+  test('Should clone area flat to one bottom', () {
+    var start = Point(-33, -51, 52);
+    var end = Point(-35, -51, 50);
+
+    var calculatedTarget = Calculator.getTarget(
+      start: start,
+      end: end,
+      offset: OneDimensionOffset(x: 1),
+    );
+
+    expect(calculatedTarget, equals(Point(-32,-51,50)));
+  });
 }
