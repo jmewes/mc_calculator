@@ -65,153 +65,150 @@ class PointsGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(15.0),
-      child: Column(
-        children: [
-          SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                width: widthFirstCol,
-              ),
-              Container(
-                width: widthMiscCol,
-                child: Text("X"),
-              ),
-              Container(
-                width: widthMiscCol,
-                child: Text("Y"),
-              ),
-              Container(
-                width: widthMiscCol,
-                child: Text("Z"),
-              ),
-            ],
-          ),
-          SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                width: widthFirstCol,
-                child: Text("Start"),
-              ),
-              Container(
-                width: widthMiscCol,
-                child: TextField(
-                  keyboardType: TextInputType.none,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: 'X\u2081', // x_1
-                  ),
+    return Column(
+      children: [
+
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Container(
+              width: widthFirstCol,
+            ),
+            Container(
+              width: widthMiscCol,
+              child: Text("X"),
+            ),
+            Container(
+              width: widthMiscCol,
+              child: Text("Y"),
+            ),
+            Container(
+              width: widthMiscCol,
+              child: Text("Z"),
+            ),
+          ],
+        ),
+        SizedBox(height: 20),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Container(
+              width: widthFirstCol,
+              child: Text("Start"),
+            ),
+            Container(
+              width: widthMiscCol,
+              child: TextField(
+                keyboardType: TextInputType.none,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'X\u2081', // x_1
                 ),
               ),
-              Container(
-                width: widthMiscCol,
-                child: TextField(
-                  keyboardType: TextInputType.none,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: 'Y\u2081', // y_1
-                  ),
+            ),
+            Container(
+              width: widthMiscCol,
+              child: TextField(
+                keyboardType: TextInputType.none,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'Y\u2081', // y_1
                 ),
               ),
-              Container(
-                width: widthMiscCol,
-                child: TextField(
-                  keyboardType: TextInputType.none,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: 'Z\u2081', // z_1
-                  ),
+            ),
+            Container(
+              width: widthMiscCol,
+              child: TextField(
+                keyboardType: TextInputType.none,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'Z\u2081', // z_1
                 ),
               ),
-            ],
-          ),
-          SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                width: widthFirstCol,
-                child: Text("End"),
-              ),
-              Container(
-                width: widthMiscCol,
-                child: TextField(
-                  keyboardType: TextInputType.none,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: 'X\u2082', // x_2
-                  ),
+            ),
+          ],
+        ),
+        SizedBox(height: 20),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Container(
+              width: widthFirstCol,
+              child: Text("End"),
+            ),
+            Container(
+              width: widthMiscCol,
+              child: TextField(
+                keyboardType: TextInputType.none,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'X\u2082', // x_2
                 ),
               ),
-              Container(
-                width: widthMiscCol,
-                child: TextField(
-                  keyboardType: TextInputType.none,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: 'Y\u2082', // y_2
-                  ),
+            ),
+            Container(
+              width: widthMiscCol,
+              child: TextField(
+                keyboardType: TextInputType.none,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'Y\u2082', // y_2
                 ),
               ),
-              Container(
-                width: widthMiscCol,
-                child: TextField(
-                  keyboardType: TextInputType.none,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: 'Z\u2082', // z_2
-                  ),
+            ),
+            Container(
+              width: widthMiscCol,
+              child: TextField(
+                keyboardType: TextInputType.none,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'Z\u2082', // z_2
                 ),
               ),
-            ],
-          ),
-          SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                width: widthFirstCol,
-                child: Text("Target"),
-              ),
-              Container(
-                width: widthMiscCol,
-                child: TextField(
-                  keyboardType: TextInputType.none,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: 'Δ',
-                  ),
+            ),
+          ],
+        ),
+        SizedBox(height: 20),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Container(
+              width: widthFirstCol,
+              child: Text("Target"),
+            ),
+            Container(
+              width: widthMiscCol,
+              child: TextField(
+                keyboardType: TextInputType.none,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'Δ',
                 ),
               ),
-              Container(
-                width: widthMiscCol,
-                child: TextField(
-                  keyboardType: TextInputType.none,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: 'Δ',
-                  ),
+            ),
+            Container(
+              width: widthMiscCol,
+              child: TextField(
+                keyboardType: TextInputType.none,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'Δ',
                 ),
               ),
-              Container(
-                width: widthMiscCol,
-                child: TextField(
-                  keyboardType: TextInputType.none,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: 'Δ',
-                  ),
+            ),
+            Container(
+              width: widthMiscCol,
+              child: TextField(
+                keyboardType: TextInputType.none,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'Δ',
                 ),
               ),
-            ],
-          ),
-        ],
-      ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }

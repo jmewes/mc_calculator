@@ -7,7 +7,6 @@ class NumericKeyboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 300,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
