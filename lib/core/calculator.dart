@@ -31,22 +31,22 @@ class Calculator {
     if (offset.y != null) {
       var offsetY = offset.y!;
       if (offsetY.isNegative) {
-        var bottomRight = Point(minX, minY, commonZ!);
-        return bottomRight + (offset + OneDimensionOffset(y: -(blocksY - 1)));
+        var referencePoint = Point(minX, minY, commonZ!);
+        return referencePoint + (offset + OneDimensionOffset(y: -(blocksY - 1)));
       } else {
-        var topRight = Point(minX, maxY, commonZ!);
-        return topRight + offset;
+        var referencePoint = Point(minX, maxY, commonZ!);
+        return referencePoint + offset;
       }
     }
 
     if (offset.x != null) {
       var offsetX = offset.x!;
       if (offsetX.isNegative) {
-        var bottomRight = Point(minX, minY, commonZ!);
-        return bottomRight + (offset + OneDimensionOffset(x: -(blocksX - 1)));
+        var referencePoint = Point(minX, minY, commonZ!);
+        return referencePoint + (offset + OneDimensionOffset(x: -(blocksX - 1)));
       } else {
-        var bottomLeft = Point(maxX, minY, commonZ!);
-        return bottomLeft + offset;
+        var referencePoint = Point(maxX, minY, commonZ!);
+        return referencePoint + offset;
       }
     }
 
@@ -56,7 +56,8 @@ class Calculator {
         var referencePoint = Point(commonX!, minY, minZ);
         return referencePoint + (offset + OneDimensionOffset(z: -(blocksZ - 1)));
       } else {
-        throw "Operation not supported yet";
+        var referencePoint = Point(commonX!, minY, maxZ);
+        return referencePoint + offset;
       }
     }
 

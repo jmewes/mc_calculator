@@ -115,7 +115,7 @@ void main() {
 
   test('Should clone area to the back', () {
     var start = Point(4, -58, 1);
-    var end = Point(4 , -60, -1);
+    var end = Point(4, -60, -1);
 
     var calculatedTarget = Calculator.getTarget(
       start: start,
@@ -124,5 +124,18 @@ void main() {
     );
 
     expect(calculatedTarget, equals(Point(4, -60, -4)));
+  });
+
+  test('Should clone area to the front', () {
+    var start = Point(4, -58, 1);
+    var end = Point(4, -60, -1);
+
+    var calculatedTarget = Calculator.getTarget(
+      start: start,
+      end: end,
+      offset: OneDimensionOffset(z: 1),
+    );
+
+    expect(calculatedTarget, equals(Point(4, -60, 2)));
   });
 }
