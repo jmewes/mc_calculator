@@ -6,20 +6,20 @@ class Point extends Equatable {
   final int y;
   final int z;
 
-  Point({required this.x, required this.y, required this.z});
+  Point(this.x, this.y, this.z);
 
   @override
   List<Object?> get props => [x, y, z];
 
   Point operator +(OneDimensionOffset offset) {
     if (offset.x != null) {
-      return Point(x: x + offset.x!, y: y, z: z);
+      return Point(x + offset.x!, y, z);
     }
     if (offset.y != null) {
-      return Point(x: x, y: y + offset.y!, z: z);
+      return Point(x, y + offset.y!, z);
     }
     if (offset.z != null) {
-      return Point(x: x, y: y, z: z + offset.z!);
+      return Point(x, y, z + offset.z!);
     }
     return this;
   }
