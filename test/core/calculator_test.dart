@@ -172,7 +172,7 @@ void main() {
     var calculatedTarget = Calculator.getTarget(
       start: start,
       end: end,
-      offset: OneDimensionOffset(z: 1),
+      offset: OneDimensionOffset(x: -1),
     );
 
     expect(calculatedTarget, equals(Point(-38,-51,50)));
