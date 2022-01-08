@@ -26,11 +26,21 @@ class Point extends Equatable {
 }
 
 class OneDimensionOffset extends Equatable {
-  final int? x;
-  final int? y;
-  final int? z;
+  late final int? x;
+  late final int? y;
+  late final int? z;
 
-  OneDimensionOffset({this.x, this.y, this.z}) {
+  OneDimensionOffset({int? x, int? y, int? z}) {
+    if (x == 0) {
+      x = null;
+    }
+    if (y == 0) {
+      y = null;
+    }
+    if (z == 0) {
+      z = null;
+    }
+
     if (x != null) {
       if (y != null || z != null) {
         throw "Only one dimension is allowed to be set";
@@ -46,6 +56,10 @@ class OneDimensionOffset extends Equatable {
         throw "Only one dimension is allowed to be set";
       }
     }
+
+    this.x = x;
+    this.y = y;
+    this.z = z;
   }
 
   @override

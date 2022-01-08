@@ -12,10 +12,6 @@ class Calculator {
     int blocksY = (start.y - end.y).abs() + 1;
     int blocksZ = (start.z - end.z).abs() + 1;
 
-    int deltaX = (start.x - end.x).abs();
-    int deltaY = (start.y - end.y).abs();
-    int deltaZ = (start.z - end.z).abs();
-
     var minX = min(start.x, end.x);
     var minY = min(start.y, end.y);
     var minZ = min(start.z, end.z);
